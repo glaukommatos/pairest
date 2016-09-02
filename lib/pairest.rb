@@ -14,6 +14,7 @@ class Pairest
 
   private_class_method
 
+  # TODO: This method is not currently tested at all.
   def self.check_configuration
     ssh_config_path = File.expand_path('~/.ssh/config')
 
@@ -23,6 +24,7 @@ class Pairest
     end
   end
 
+  # TODO: This method is not currently tested at all.
   def self.skeleton_config
     "Host dev.example.com\n" \
     "  HostName dev.example.com\n" \

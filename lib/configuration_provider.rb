@@ -14,6 +14,7 @@ class ConfigurationProvider
 
   private_class_method
 
+  # TODO: Create this file if it isn't already there.
   def self.load_yaml
     config_file = File.read(File.expand_path('~/.pairest.yml'))
     YAML.load(config_file)
