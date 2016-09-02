@@ -12,7 +12,9 @@ class ConfigurationProvider
     end
   end
 
-  private_class_method def self.load_yaml
+  private_class_method
+
+  def self.load_yaml
     config_file = File.read(File.expand_path('~/.pairest.yml'))
     YAML.load(config_file)
   end
