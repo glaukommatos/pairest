@@ -33,9 +33,11 @@ class Pairest
   end
 
   def self.configs(initials)
-    @config ||=
-      ConfigurationProvider.user_configurations
-                           .select { |uc| initials.include? uc.initials }
+    @configs ||= ConfigurationProvider.user_configurations
+
+    initials.map do |initial|
+      @configs.find { |config| config.initials == initial }
+    end
   end
 
   def self.key(initials)

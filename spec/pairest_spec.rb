@@ -16,15 +16,15 @@ describe Pairest do
         .to receive(:user_configurations) { user_configurations }
 
       expect(GitConfigurator).to receive(:write_name_setting)
-        .with('Haskell Pointer, Brian Lai')
+        .with('Brian Lai, Haskell Pointer')
 
       expect(GitConfigurator).to receive(:write_email_settings)
-        .with('haskell.pointer@asynchrony.com, brian.lai@asynchrony.com')
+        .with('brian.lai@asynchrony.com, haskell.pointer@asynchrony.com')
 
       expect(SshConfigurator).to receive(:link_current_key)
-        .with('haskell.pointer')
+        .with('brian.lai')
 
-      Pairest.main(%w(hp bl))
+      Pairest.main(%w(bl hp))
     end
   end
 end
