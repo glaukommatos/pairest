@@ -5,7 +5,8 @@ require_relative 'user_configuration'
 
 class Pairest
   def self.main(initials)
-    check_configuration
+    check_ssh_config_and_create_if_needed
+    check_pairest_config_and_create_if_needed
 
     GitConfigurator.write_name_setting names(initials)
     GitConfigurator.write_email_settings emails(initials)
@@ -15,28 +16,54 @@ class Pairest
   private_class_method
 
   # TODO: This method is not currently tested at all.
-  def self.check_configuration
+  def self.check_ssh_config_and_create_if_needed
     ssh_config_path = File.expand_path('~/.ssh/config')
 
     unless File.exist? ssh_config_path
       puts 'Creating ~/.ssh/config for you... please modify before using'
-      File.write(File.expand_path('~/.ssh/config'), skeleton_config)
+      File.write(File.expand_path('~/.ssh/config'), skeleton_ssh_config)
     end
   end
 
   # TODO: This method is not currently tested at all.
-  def self.skeleton_config
+  def self.skeleton_ssh_config
     "Host dev.example.com\n" \
     "  HostName dev.example.com\n" \
     "  User git\n" \
     "  IdentityFile ~/.ssh/current_key\n"
   end
 
+  # TODO: This method is not currently tested at all.
+  def self.check_pairest_config_and_create_if_needed
+    pairest_config_path = File.expand_path('~/.pairest.yml')
+
+    unless File.exist? pairest_config_path
+      puts 'Creating ~/.pairest.yml for you... please modify before using'
+      File.write(File.expand_path('~/.pairest.yml'), skeleton_pairest_config)
+    end
+  end
+
+  # TODO: This method is not currently tested at all.
+  def self.skeleton_pairest_config
+    "hp:\n" \
+    "  name: Haskell Pointer\n" \
+    "  email: kyle.pointer@asynchrony.com\n" \
+    "  key_name: kyle.pointer\n" \
+    "ko:\n" \
+    "  name: Kali Olsen\n" \
+    "  email: kali.olsen@asynchrony.com\n" \
+    "  key_name: kali.olsen\n"
+  end
+
   def self.configs(initials)
     @configs ||= ConfigurationProvider.user_configurations
 
     initials.map do |initial|
-      @configs.find { |config| config.initials == initial }
+      user_config = @configs.find { |config| config.initials == initial }
+      unless user_config
+        raise "Unknown initials: #{initial}. Add #{initial} to ~/.pairest.yml"
+      end
+      user_config
     end
   end
 
