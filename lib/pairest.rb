@@ -6,7 +6,6 @@ require_relative 'user_configuration'
 class Pairest
   def self.main(initials)
     check_ssh_config_and_create_if_needed
-    check_pairest_config_and_create_if_needed
 
     GitConfigurator.write_name_setting names(initials)
     GitConfigurator.write_email_settings emails(initials)
@@ -31,28 +30,6 @@ class Pairest
     "  HostName dev.example.com\n" \
     "  User git\n" \
     "  IdentityFile ~/.ssh/current_key\n"
-  end
-
-  # TODO: This method is not currently tested at all.
-  def self.check_pairest_config_and_create_if_needed
-    pairest_config_path = File.expand_path('~/.pairest.yml')
-
-    unless File.exist? pairest_config_path
-      puts 'Creating ~/.pairest.yml for you... please modify before using'
-      File.write(File.expand_path('~/.pairest.yml'), skeleton_pairest_config)
-    end
-  end
-
-  # TODO: This method is not currently tested at all.
-  def self.skeleton_pairest_config
-    "hp:\n" \
-    "  name: Haskell Pointer\n" \
-    "  email: kyle.pointer@asynchrony.com\n" \
-    "  key_name: kyle.pointer\n" \
-    "ko:\n" \
-    "  name: Kali Olsen\n" \
-    "  email: kali.olsen@asynchrony.com\n" \
-    "  key_name: kali.olsen\n"
   end
 
   def self.configs(initials)
