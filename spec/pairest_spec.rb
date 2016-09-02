@@ -1,6 +1,6 @@
 describe Pairest do
   describe '.main' do
-    it 'is' do
+    it 'reads configurations and writes new settings' do
       user_configurations = [
         UserConfiguration.new(initials: 'hp',
                               email: 'haskell.pointer@asynchrony.com',
