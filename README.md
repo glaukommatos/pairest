@@ -1,5 +1,6 @@
-Pairest
+# Pairest
 
+## Setup
 Please create a ~/.pairest.yml with the following format (right now it'll crash if you don't):
 ```
 hp:
@@ -10,8 +11,10 @@ bl:
   name: Brian Lai
   email: brian.lai@asynchrony.com
   key_name: brian.lai
+
 ```
 
+Pairest will look for keys under ~/.ssh/, so the key name refers to the name of a key file in the ~/.ssh/ directory.
 
 As of right now, this isn't linked into any $PATH by default, so you'll need to do that yourself until it's packaged as a gem.
 
