@@ -1,7 +1,7 @@
 require 'yaml'
 
 class ConfigurationProvider
-  def user_configurations
+  def self.user_configurations
     yaml_users = load_yaml
 
     yaml_users.map do |initials, details|
@@ -12,10 +12,8 @@ class ConfigurationProvider
     end
   end
 
-  private
-
-  def load_yaml
-    config_file = File.read('~/.pairest.yml')
+  private_class_method def self.load_yaml
+    config_file = File.read(File.expand_path('~/.pairest.yml'))
     YAML.load(config_file)
   end
 end

@@ -13,9 +13,11 @@ describe ConfigurationProvider do
 
   describe '#user_configurations' do
     it 'returns UserConfiguration objects based on the YAML contents' do
-      test_object = ConfigurationProvider.new
+      expect(File).to receive(:expand_path)
+        .with('~/.pairest.yml') { '/lul/.pairest.yml' }
 
-      expect(File).to receive(:read).with('~/.pairest.yml') { example_yaml }
+      expect(File).to receive(:read)
+        .with('/lul/.pairest.yml') { example_yaml }
 
       expected_configurations = [
         UserConfiguration.new(
@@ -32,7 +34,8 @@ describe ConfigurationProvider do
         )
       ]
 
-      expect(test_object.user_configurations).to eq expected_configurations
+      expect(ConfigurationProvider.user_configurations)
+        .to eq expected_configurations
     end
   end
 end
