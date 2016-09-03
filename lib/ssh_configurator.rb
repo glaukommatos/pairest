@@ -18,9 +18,11 @@ class SshConfigurator
   end
 
   def self.error_message
-    "Creating ~/.ssh/config for you. Edit it before you continue\n" \
-    "Pairest will manage a link called current_key in ~/.ssh, so you\n" \
-    "probably want to keep that part of the ssh config the same."
+    "Creating ~/.ssh/config for you.\n" \
+    "Please edit it before you continue.\n" \
+    "Pairest will manage a symbolic link called\n" \
+    "current_key in ~/.ssh, so you probably want to\n" \
+    "keep that part of the ssh config the same.\n"
   end
 
   def self.skeleton_ssh_config
