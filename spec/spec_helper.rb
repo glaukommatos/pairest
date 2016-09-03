@@ -17,7 +17,14 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+# SimpleCov documentation makes it sound like it must be required BEFORE
+# application code, so keep this in front of the Dir[... below
+require 'simplecov'
+SimpleCov.start
+
+# Look inside of lib for Ruby files and load them all.
 Dir[File.dirname(__FILE__) + '/../lib/*.rb'].each { |file| require file }
+
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

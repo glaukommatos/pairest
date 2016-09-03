@@ -5,32 +5,12 @@ require_relative 'user_configuration'
 
 class Pairest
   def self.main(initials)
-    check_ssh_config_and_create_if_needed
-
     GitConfigurator.write_name_setting names(initials)
     GitConfigurator.write_email_settings emails(initials)
     SshConfigurator.link_current_key key(initials)
   end
 
   private_class_method
-
-  # TODO: This method is not currently tested at all.
-  def self.check_ssh_config_and_create_if_needed
-    ssh_config_path = File.expand_path('~/.ssh/config')
-
-    unless File.exist? ssh_config_path
-      puts 'Creating ~/.ssh/config for you... please modify before using'
-      File.write(File.expand_path('~/.ssh/config'), skeleton_ssh_config)
-    end
-  end
-
-  # TODO: This method is not currently tested at all.
-  def self.skeleton_ssh_config
-    "Host dev.example.com\n" \
-    "  HostName dev.example.com\n" \
-    "  User git\n" \
-    "  IdentityFile ~/.ssh/current_key\n"
-  end
 
   def self.configs(initials)
     @configs ||= ConfigurationProvider.user_configurations
