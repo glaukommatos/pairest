@@ -4,7 +4,7 @@ task :spec do
   sh 'rspec spec'
 end
 
-task :link do
+task :lint do
   sh 'rubocop'
 end
 
@@ -35,6 +35,6 @@ task :gemspec do
   GemVersion.increment_version
 end
 
-task default: [:spec, :link]
+task default: [:spec, :lint]
 task build: [:default, :gemspec, :build_gem]
 
