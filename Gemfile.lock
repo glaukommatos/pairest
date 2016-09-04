@@ -12,6 +12,7 @@ GEM
       ast (~> 2.2)
     powerpack (0.1.1)
     rainbow (2.1.0)
+    rake (10.4.2)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -44,6 +45,7 @@ PLATFORMS
 
 DEPENDENCIES
   gem_version
+  rake
   rspec
   rubocop
   simplecov
