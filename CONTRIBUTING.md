@@ -5,5 +5,5 @@
 - Do ```rake build``` and test the gem that it spits out.
 - Once you're satisfied please create a pull request against master.
 
-I will not accept anything that decreases test coverage, so please test your code. :)
+Thanks for helping!
 
