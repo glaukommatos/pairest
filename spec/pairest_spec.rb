@@ -76,5 +76,17 @@ describe Pairest do
       expect { Pairest.main(%w(pp)) }
         .to raise_error 'Unknown initials: pp. Add pp to ~/.pairest.yml'
     end
+
+    it 'prints a usage message if no arguments are passed ' do
+      usage_message = "Usage: pairest [initials] [initials]\n" \
+                      "Example: pairest hp ko\n" \
+                      "         pairest hp\n" \
+                      "         pairest hp ko bl\n"
+
+      expect(STDOUT).to receive(:puts).with(usage_message)
+
+      expect { Pairest.main([]) }
+        .to raise_error SystemExit
+    end
   end
 end

@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - spec/spec_helper.rb
     - pairest.gemspec
+    - Rakefile
     - Gemfile
 Documentation:
   Enabled: false

@@ -1,2 +1,4 @@
 *.swp
+pairest.gemspec
+pairest-*.gem
 coverage

@@ -5,12 +5,26 @@ require_relative 'user_configuration'
 
 class Pairest
   def self.main(initials)
+    validate_input(initials)
+
     GitConfigurator.write_name_setting names(initials)
     GitConfigurator.write_email_settings emails(initials)
     SshConfigurator.link_current_key key(initials)
   end
 
   private_class_method
+
+  def self.validate_input(initials)
+    usage_message = "Usage: pairest [initials] [initials]\n" \
+                    "Example: pairest hp ko\n" \
+                    "         pairest hp\n" \
+                    "         pairest hp ko bl\n"
+
+    if initials.empty?
+      puts usage_message
+      raise SystemExit
+    end
+  end
 
   def self.configs(initials)
     @configs ||= ConfigurationProvider.user_configurations

@@ -4,6 +4,9 @@ GEM
     ast (2.3.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    gem_version (0.0.6)
+      git (>= 1.2.5)
+    git (1.3.0)
     json (2.0.2)
     parser (2.3.1.2)
       ast (~> 2.2)
@@ -40,6 +43,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  gem_version
   rspec
   rubocop
   simplecov
