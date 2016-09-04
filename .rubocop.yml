@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - spec/spec_helper.rb
+    - vendor
     - pairest.gemspec
     - Rakefile
     - Gemfile
