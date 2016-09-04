@@ -1,6 +1,9 @@
 # Pairest
 
 [![Build Status](https://travis-ci.com/glaukommatos/pairest.svg?token=R14gHPyWbqM9UH7Yoozf&branch=master)](https://travis-ci.com/glaukommatos/pairest)
+[![Code Climate](https://codeclimate.com/repos/57cc7b8b9c155616c6002828/badges/7d1ce63ae61f58da536c/gpa.svg)](https://codeclimate.com/repos/57cc7b8b9c155616c6002828/feed)
+[![Test Coverage](https://codeclimate.com/repos/57cc7b8b9c155616c6002828/badges/7d1ce63ae61f58da536c/coverage.svg)](https://codeclimate.com/repos/57cc7b8b9c155616c6002828/coverage)
+[![Issue Count](https://codeclimate.com/repos/57cc7b8b9c155616c6002828/badges/7d1ce63ae61f58da536c/issue_count.svg)](https://codeclimate.com/repos/57cc7b8b9c155616c6002828/feed)
 
 ## Installation
 To install Pairest, do a ```gem build pairest.gemspec``` then do a ```gem install``` on the file that is created.
