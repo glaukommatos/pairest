@@ -15,10 +15,10 @@ hp:
   name: Haskell Pointer
   email: kyle.pointer@asynchrony.com
   key_name: kyle.pointer
-bl:
-  name: Brian Lai
-  email: brian.lai@asynchrony.com
-  key_name: brian.lai
+eu:
+  name: Example User 
+  email: example.user@someplace.com
+  key_name: example.user
 
 ```
 
