@@ -17,6 +17,10 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+# CodeClimate stuff...
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 # SimpleCov documentation makes it sound like it must be required BEFORE
 # application code, so keep this in front of the Dir[... below
 require 'simplecov'
