@@ -1,5 +1,7 @@
 # Pairest
 
+[![Build Status](https://travis-ci.com/glaukommatos/pairest.svg?token=R14gHPyWbqM9UH7Yoozf&branch=master)](https://travis-ci.com/glaukommatos/pairest)
+
 ## Installation
 To install Pairest, do a ```gem build pairest.gemspec``` then do a ```gem install``` on the file that is created.
 
