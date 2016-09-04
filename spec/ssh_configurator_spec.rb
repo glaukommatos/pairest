@@ -1,10 +1,18 @@
 describe SshConfigurator do
   describe '.set_current_key' do
     it 'will relink the key' do
-      expect(File).to receive(:exist?) { true }
+      expect(File).to receive(:expand_path)
+        .with('~/.ssh/config') { '/lul/.ssh/config' }
+      expect(File).to receive(:exist?)
+        .with('/lul/.ssh/config') { true }
 
-      expect(SshConfigurator).to receive(:system)
-        .with('ln -sf ~/.ssh/blah ~/.ssh/current_key')
+      expect(File).to receive(:expand_path)
+        .with('~/.ssh/blah') { '/lul/.ssh/blah' }
+      expect(File).to receive(:expand_path)
+        .with('~/.ssh/current_key') { '/lul/.ssh/current_key' }
+
+      expect(FileUtils).to receive(:ln_sf)
+        .with('/lul/.ssh/blah', '/lul/.ssh/current_key')
 
       SshConfigurator.link_current_key('blah')
     end

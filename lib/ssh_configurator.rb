@@ -1,8 +1,13 @@
+require 'fileutils'
+
 class SshConfigurator
   def self.link_current_key(name)
     verify_ssh_config_exists
 
-    system "ln -sf ~/.ssh/#{name} ~/.ssh/current_key"
+    FileUtils.ln_sf(
+      File.expand_path("~/.ssh/#{name}"),
+      File.expand_path('~/.ssh/current_key')
+    )
   end
 
   private_class_method
