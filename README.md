@@ -11,12 +11,12 @@ The main executable is 'pairest' and usage is like this:
 ## Setup
 Please create a ```~/.pairest.yml``` with the following format (if you don't one will be created for you):
 ```
-hp:
-  name: Haskell Pointer
-  email: kyle.pointer@asynchrony.com
-  key_name: kyle.pointer
+jd:
+  name: John Doe
+  email: jd@anonymous.com
+  key_name: john.doe
 eu:
-  name: Example User 
+  name: Example User
   email: example.user@someplace.com
   key_name: example.user
 
