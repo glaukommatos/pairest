@@ -22,7 +22,7 @@ spec = Gem::Specification.new do |s|
   s.email       = 'haskell.pointer@asynchrony.com'
   s.files       = FileList['lib/*.rb'].to_a
   s.homepage    =
-    'https://gitlab.asynchrony.com/kyle.pointer/pairest'
+    'https://github.com/glaukommatos/pairest'
   s.license     = 'MIT'
   s.executables << 'pairest'
 end
