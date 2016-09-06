@@ -27,7 +27,7 @@ eu:
 
 ```
 
-Pairest will manage keys under ```~/.ssh/```, so the key name refers to the name of a key file in the ```~/.ssh/``` directory. If you don't know how to create an SSH key, google the documentation for ```ssh-keygen``` or read its ```man``` page.
+Pairest will manage keys under ```~/.ssh/```, so the key name refers to the name of a key file in the ```~/.ssh/``` directory. If you don't know how to create an SSH key, google the documentation for ```ssh-keygen``` or read its ```man``` page. Pairest works by changing the current_key link inside of your ```~/.ssh/``` directory, so it will create a default ssh config file that points at this private key for an example host. You'll have to change it to be the host you actually care about. You can read up on the ssh config file format [here](http://linux.die.net/man/5/ssh_config) or by doing ```man ssh_config```.
 
 # Caveats
 Keep in mind that the Git commands it runs are not with the ```--global``` flag. This was on purpose, but if it's useful to configure this behavior, it can be made configurable in the future.
