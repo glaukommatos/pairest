@@ -11,7 +11,7 @@ To install Pairest, do
     gem install pairest
 ```
 
-The main executable is 'pairest' and usage is like this:
+Pairest usage looks like this:
 ```
     $ pairest hp bl
 ```
