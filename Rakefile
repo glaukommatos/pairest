@@ -4,10 +4,6 @@ task :spec do
   sh 'rspec spec'
 end
 
-task :lint do
-  sh 'rubocop'
-end
-
 task :build_gem do
   sh 'gem build pairest.gemspec'
 end
@@ -35,6 +31,6 @@ task :gemspec do
   GemVersion.increment_version
 end
 
-task default: [:spec, :lint]
+task default: [:spec]
 task build: [:default, :gemspec, :build_gem]
 
