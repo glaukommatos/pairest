@@ -1,10 +1,5 @@
 # Pairest
 
-[![Build Status](https://travis-ci.org/glaukommatos/pairest.svg?branch=master)](https://travis-ci.org/glaukommatos/pairest)
-[![Code Climate](https://codeclimate.com/github/glaukommatos/pairest/badges/gpa.svg)](https://codeclimate.com/github/glaukommatos/pairest)
-[![Test Coverage](https://codeclimate.com/github/glaukommatos/pairest/badges/coverage.svg)](https://codeclimate.com/github/glaukommatos/pairest/coverage)
-[![Issue Count](https://codeclimate.com/github/glaukommatos/pairest/badges/issue_count.svg)](https://codeclimate.com/github/glaukommatos/pairest)
-
 ## Installation
 To install Pairest, do
 ```
