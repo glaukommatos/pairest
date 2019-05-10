@@ -30,7 +30,7 @@ Pairest will also create an ```~/.ssh/config``` if you do not have one already. 
 Pairest will manage a link under ```~/.ssh/```, so the key names in ```./pairest.yml``` refer to the name of key files in the ```~/.ssh/``` directory. If you don't know how to create an SSH key, google the documentation for ```ssh-keygen``` or do ```man ssh-keygen```. Pairest will create a default ssh config file that points at this link for an example host. You'll have to change it to be the host you actually care about. You can read up on the ssh config file format [here](http://linux.die.net/man/5/ssh_config) or by doing ```man ssh_config```.
 
 # Caveats
-Keep in mind that the Git commands it runs are not with the ```--globoal``` flag. This was on purpose, but if it's useful to configure this behavior, it can be made configurable in the future.
+Keep in mind that the Git commands it runs are not with the ```--global``` flag. This was on purpose, but if it's useful to configure this behavior, it can be made configurable in the future.
 
 # Issues
 Please feel welcome to open issues and pull requests on this repository if you have any issues or feature requests. Thanks!
