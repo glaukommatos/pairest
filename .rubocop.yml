@@ -1,9 +1,0 @@
-AllCops:
-  Exclude:
-    - spec/spec_helper.rb
-    - vendor/**/*
-    - pairest.gemspec
-    - Rakefile
-    - Gemfile
-Documentation:
-  Enabled: false
